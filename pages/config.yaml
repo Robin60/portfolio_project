@@ -1,0 +1,18 @@
+credentials:
+  usernames:
+    rowino:
+      name: Robin Owino
+      password: $2b$12$WU6YhTtj5hkvR6pki5/tHO6Bu4bQFc.YK2zyywSS6rqc7FrUZUVWK
+      role: admin
+    pkulundu:
+      name: Patrick Kulundu
+      password: $2b$12$Dfa1hNV.Ko51tT0O/tGrIOBGGQIwzPgyRegDKApIZrgiMJ6XnIjZO
+      role: standard
+    mmukhanya:
+      name: Moses Mukhanya
+      password: $2b$12$ibpiiLy2eP5x28bRjcqufuXANaxAB2UtKY56rqUda35pQmiPLF7NS
+      role: admin
+cookie:
+  expiry_days: 1
+  key: "pr!c!se"
+  name: aukey
