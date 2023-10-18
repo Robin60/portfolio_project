@@ -6,6 +6,8 @@ from streamlit_option_menu import option_menu
 from sqlalchemy import create_engine, text
 from datetime import datetime
 from sqlalchemy.orm import sessionmaker
+from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.let_it_rain import rain
 import asyncio
 import pickle
 import redis
@@ -16,7 +18,7 @@ st.set_page_config(page_title="Dras",
                    )
 st.markdown('<h1 span style="color: blue;">DIABETES RISK ASSESSMENT.</span>', unsafe_allow_html=True)
 st.warning('Early diagnosis, leads to early prevention and treatment therefore healthy life..')
-ysno = ['','no', 'yes']
+ysno = ['no', 'yes']
 
 def loadModel(model_file, scaler_file):
     """Loads the model and standard scaler"""
@@ -32,7 +34,7 @@ def loadModel(model_file, scaler_file):
         st.error("File not found returning: {}".format(fe))
         return None
     except Exception as ex:
-        st.error("Error occurred returning: {}".format(fe))
+        st.error("Error occurred returning: {}".format(ex))
         return None
 def redisSet(val):
     """Set diabetes prediction outcome value in the redis server"""
@@ -83,8 +85,14 @@ def printResult(pred):
             Below are potential causes.</span>', unsafe_allow_html=True)
         risks = st.table(cases)
         st.markdown('<h4 span style="color: orange;">You are therefore required to visit nearest facility for further\
-            screening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
+            creening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
     elif pred == 0:
+        rain(
+            emoji="🎈",
+            font_size=34,
+            falling_speed=5.,
+            animation_length="infinite"
+        )
         st.markdown('<h4 span style="color: green;">Model returns negative prediction for diabetes assessment🏌️‍♂️.</span>', unsafe_allow_html=True)
         st.markdown('<h5 span style="color: green;">However, other contributing factors may have not been captured as contributors to this prediction\
             therefore there is no certainity the result is perfectly accurate..</span>', unsafe_allow_html=True)

@@ -7,4 +7,5 @@ seaborn==0.13.0
 SQLAlchemy==2.0.22
 streamlit==1.24.0
 streamlit_authenticator==0.2.2
+streamlit_extras==0.3.4
 streamlit_option_menu==0.3.6
