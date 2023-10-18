@@ -16,7 +16,7 @@ st.set_page_config(page_title="Dras",
                    )
 st.markdown('<h1 span style="color: blue;">DIABETES RISK ASSESSMENT.</span>', unsafe_allow_html=True)
 st.warning('Early diagnosis, leads to early prevention and treatment therefore healthy life..')
-ysno = ['no', 'yes']
+ysno = ['','no', 'yes']
 
 def loadModel(model_file, scaler_file):
     """Loads the model and standard scaler"""
