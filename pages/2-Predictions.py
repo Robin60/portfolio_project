@@ -6,9 +6,6 @@ from streamlit_option_menu import option_menu
 from sqlalchemy import create_engine, text
 from datetime import datetime
 from sqlalchemy.orm import sessionmaker
-from streamlit_extras.switch_page_button import switch_page
-from streamlit_extras.let_it_rain import rain
-from streamlit_extras.badges import badge
 import asyncio
 import pickle
 import redis
@@ -109,12 +106,6 @@ def printResult(pred):
         st.markdown('<h4 span style="color: orange;">You are therefore required to visit nearest facility for further\
             creening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
     elif pred == 0:
-        rain(
-            emoji="🎈",
-            font_size=34,
-            falling_speed=5.,
-            animation_length="infinite"
-        )
         st.markdown('<h4 span style="color: green;">Model returns negative prediction for diabetes assessment🏌️‍♂️.</span>', unsafe_allow_html=True)
         st.markdown('<h5 span style="color: green;">However, other contributing factors may have not been captured as contributors to this prediction\
             therefore there is no certainity the result is perfectly accurate..</span>', unsafe_allow_html=True)

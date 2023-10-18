@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import streamlit as st
-from streamlit_extras.switch_page_button import switch_page
 
 st.set_page_config(page_title="Dras",
                    page_icon=":sign-intersection-fill:",
@@ -37,9 +36,6 @@ st.write("4. Empowerment and Patient Engagement: DRAS can empower individuals to
 st.markdown('<h3 span style="color: green;">MISSION.</span>', unsafe_allow_html=True)
 st.write("To promote early detection, prevention, and management of diabetes by identifying at-risk individuals and potential causes.")
 
-stats = st.button('Show more')
-if stats:
-        switch_page("Statistics")
 hide_style = """
          <style>
          #MainMenu {visibility: hidden;}
