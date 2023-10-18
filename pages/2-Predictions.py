@@ -76,27 +76,6 @@ async def persist_data(x_df):
         st.error(e)
         return False
 
-def fetch_data():
-    """Fetches data from postresql database"""
-    data = pd.read_sql("dras_table", con=getEngine())
-    return data
-
-def fetch_data1():
-    """Fetches data from postresql database"""
-    engine = getEngine()
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    try:
-        sql = text("SELECT * FROM dras_table")
-        result = session.execute(sql)
-        for row in result:
-            st.write(row)
-
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-    finally:
-        session.close()
-
 def printResult(pred):
     #Prints results of the Dras model prediction.
     if pred == 1:
@@ -104,7 +83,7 @@ def printResult(pred):
             Below are potential causes.</span>', unsafe_allow_html=True)
         risks = st.table(cases)
         st.markdown('<h4 span style="color: orange;">You are therefore required to visit nearest facility for further\
-            creening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
+            screening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
     elif pred == 0:
         st.markdown('<h4 span style="color: green;">Model returns negative prediction for diabetes assessment🏌️‍♂️.</span>', unsafe_allow_html=True)
         st.markdown('<h5 span style="color: green;">However, other contributing factors may have not been captured as contributors to this prediction\
