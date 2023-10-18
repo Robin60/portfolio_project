@@ -64,3 +64,12 @@ else:
         except Exception as e:
             st.error(e)
         authenticator.logout("Logout", "main")
+
+hide_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_style, unsafe_allow_html=True)

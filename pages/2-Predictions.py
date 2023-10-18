@@ -250,13 +250,13 @@ def userInput():
                 'Veggies':vgs_rs, 'HvyAlcoholConsump':alc_rs, 'AnyHealthcare':hc_rs, 'NoDocbcCost':ndc_rs,
                 'GenHlth':gh, 'MentHlth':mh, 'PhysHlth':ph, 'DiffWalk':wc_rs, 'Sex':sx_rs, 'Age':age_rs,
                 'Education':edu_rs, 'Income':inc_rs}
-    return elements, inputs, cases
+    return elements, inputs, 
+
 if __name__ == "__main__":
     user_inputs = userInput()
     elements = user_inputs[0]
     inputs = user_inputs[1]
     cases = user_inputs[-1]
-    #reset = lt.button("Back")
     lt, rt = st.columns(2)
 
     predict = rt.button("Query risk status")
@@ -281,15 +281,12 @@ if __name__ == "__main__":
                 x_df['EntryDate'] = datetime.now()
                 with st.spinner("Please wait for the execution to finish ..."):
                     asyncio.run(schedule(x_df))
-                stats = st.button('Show more')
-                if stats:
-                    switch_page("pages/Statistics")
-                
-    hide_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-    st.markdown(hide_style, unsafe_allow_html=True)
+
+hide_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_style, unsafe_allow_html=True)
