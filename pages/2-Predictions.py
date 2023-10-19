@@ -117,10 +117,10 @@ def userInput():
             or been told to have high cholestrol?", ysno)
     if chl == 'yes':
         cases.append("High cholestrol")
-        chlk_rs = 1
+        chl_rs = 1
     chlk_rs = 0
     chlk = sel_box("Have you had your cholestrol checked in the last 5 years?", ysno)
-    if chlk == 'Yes':
+    if chlk == 'yes':
         cases.append("High cholestrol history")
         chlk_rs = 1
     bmi = st.number_input("What is your body mass index (BMI)?", min_value=10, max_value=60, step=2)
@@ -137,7 +137,7 @@ def userInput():
     stk = sel_box('Have you ever been told you have a stroke?', ysno)
     if stk == 'yes':
         cases.append("Stroke or diagnosis")
-        stk = 1
+        stk_rs = 1
     hda_rs = 0
     hda = sel_box('Do you have coronary heart disease (CHD) or myocardial infarction (MI)?', ysno)
     if hda == 'yes':
@@ -169,7 +169,7 @@ def userInput():
     hc_rs = 0
     hc = sel_box("Have any kind of health care coverage, including health insurance,\
             prepaid plans such as HMO, etc?", ysno)
-    if hc_rs == 'yes':
+    if hc == 'yes':
         cases.append("Lack of health care coverage, including health insurance")
         hc_rs = 1
     ndc_rs = 0
