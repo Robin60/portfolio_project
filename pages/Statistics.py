@@ -12,7 +12,6 @@ import pickle
 from yaml.loader import SafeLoader
 import yaml
 
-@st.cache_data
 def fetching_data_from_dras():
     """Fetches data from postresql database"""
     db_url1 = "postgresql://dras_db_7ke9_user:rjbBj2JXRshov9Kkbvpz8snTKEt6MmDN@dpg-ckn4olv83ejs739li02g-a.oregon-postgres.render.com/dras_db_7ke9"
