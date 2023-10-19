@@ -247,7 +247,7 @@ if __name__ == "__main__":
             st.error(f"The following inputs are blank: {', '.join(blanks)}")
         else:
             x_df = pd.DataFrame(inputs, index=[0])
-            modelscaler = loadModel("Model1.pkl", "Scaler1.pkl")
+            modelscaler = loadModel("Model.pkl", "Scaler.pkl")
             if modelscaler:
                 model = modelscaler[0]
                 scaler = modelscaler[-1]
