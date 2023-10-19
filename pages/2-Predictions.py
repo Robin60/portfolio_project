@@ -85,7 +85,7 @@ def printResult(pred):
             Below are potential causes.</span>', unsafe_allow_html=True)
         risks = st.table(cases)
         st.markdown('<h4 span style="color: orange;">You are therefore required to visit nearest facility for further\
-            creening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
+            screening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
     elif pred == 0:
         rain(
             emoji="🎈",
@@ -247,7 +247,7 @@ if __name__ == "__main__":
             st.error(f"The following inputs are blank: {', '.join(blanks)}")
         else:
             x_df = pd.DataFrame(inputs, index=[0])
-            modelscaler = loadModel("Model.pkl", "Scaler.pkl")
+            modelscaler = loadModel("Model1.pkl", "Scaler1.pkl")
             if modelscaler:
                 model = modelscaler[0]
                 scaler = modelscaler[-1]

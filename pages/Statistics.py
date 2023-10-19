@@ -18,7 +18,14 @@ def fetching_data_from_dras():
     engine = create_engine(db_url1)
     data = pd.read_sql("dras_table", con=engine)
     return data
-
+def download_data(dta, file_name):
+    data = dta.to_csv().encode('utf-8')
+    st.download_button(
+        label="Extract this data",
+        data=data,
+        file_name= f"{file_name}.csv",
+        mime='text/csv',)
+    
 file_path = Path(__file__).parent/"hashed_pwd_pkl"
 with file_path.open('rb') as f:
     pwds = pickle.load(f)
@@ -60,6 +67,7 @@ else:
             check = rt.checkbox("")
             if check:
                 st.dataframe(data)
+                download_data(data, "Dras predictions")
         except Exception as e:
             st.error(e)
         authenticator.logout("Logout", "main")
