@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, Date
 from sqlalchemy.orm import declarative_base
@@ -36,6 +38,40 @@ class DrasTable(Base):
     Education = Column(Integer)
     Income = Column(Integer)
     Prediction = Column(Integer)
+
+    def __init__(self, EntryDate, HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HigHeartDiseaseorAttackhBP,
+        PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth,
+        DiffWalk, Sex, Age, Education, Income, Prediction):
+        this.EntryDate = EntryDate
+        this.HighBP = HighBP
+        this.HighChol = HighChol
+        this.CholCheck = CholCheck
+        this.BMI = BMI
+        this.smoker = Smoker
+        this.Stroke = Stroke
+        this.HigHeartDiseaseorAttackhBP = HigHeartDiseaseorAttackhBP
+        this.PhysActivity = PhysActivity
+        this.Fruits = Fruits
+        this.Veggies = Veggies
+        this.HvyAlcoholConsump = HvyAlcoholConsump
+        this.AnyHealthcare = AnyHealthcare
+        this.NoDocbcCost = NoDocbcCost
+        this.GenHlth = GenHlth
+        this.MentHlth = MentHlth
+        this.PhysHlth = PhysHlth
+        this.DiffWalk = DiffWalk
+        this.Sex = Sex
+        this.Age = Age
+        this.Education = Education
+        this.Income = Income
+        this.Prediction = Prediction
+
+    def __repr__(self):
+        """Representation of database variables"""
+        return f"{this.EntryDate}, {this.HighBP}, {this.HighChol}, {this.CholCheck}, {this.BMI}, {this.smoker}, {this.Stroke},
+        {this.HigHeartDiseaseorAttackhBP}, {this.PhysActivity}, {this.Fruits}, {this.Veggies}, {this.HvyAlcoholConsump},
+        {this.AnyHealthcare}, {this.NoDocbcCost}, {this.GenHlth}, {this.MentHlth}, {this.PhysHlth}, {this.DiffWalk}, {this.Sex},
+        {this.Age}, {this.Education}, {this.Income}, {this.Prediction}"
 
 Base.metadata.create_all(engine)
 engine.dispose()
