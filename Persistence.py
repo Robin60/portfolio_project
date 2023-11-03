@@ -42,36 +42,36 @@ class DrasTable(Base):
     def __init__(self, EntryDate, HighBP, HighChol, CholCheck, BMI, Smoker, Stroke, HigHeartDiseaseorAttackhBP,
         PhysActivity, Fruits, Veggies, HvyAlcoholConsump, AnyHealthcare, NoDocbcCost, GenHlth, MentHlth, PhysHlth,
         DiffWalk, Sex, Age, Education, Income, Prediction):
-        this.EntryDate = EntryDate
-        this.HighBP = HighBP
-        this.HighChol = HighChol
-        this.CholCheck = CholCheck
-        this.BMI = BMI
-        this.smoker = Smoker
-        this.Stroke = Stroke
-        this.HigHeartDiseaseorAttackhBP = HigHeartDiseaseorAttackhBP
-        this.PhysActivity = PhysActivity
-        this.Fruits = Fruits
-        this.Veggies = Veggies
-        this.HvyAlcoholConsump = HvyAlcoholConsump
-        this.AnyHealthcare = AnyHealthcare
-        this.NoDocbcCost = NoDocbcCost
-        this.GenHlth = GenHlth
-        this.MentHlth = MentHlth
-        this.PhysHlth = PhysHlth
-        this.DiffWalk = DiffWalk
-        this.Sex = Sex
-        this.Age = Age
-        this.Education = Education
-        this.Income = Income
-        this.Prediction = Prediction
+        self.EntryDate = EntryDate
+        self.HighBP = HighBP
+        self.HighChol = HighChol
+        self.CholCheck = CholCheck
+        self.BMI = BMI
+        self.smoker = Smoker
+        self.Stroke = Stroke
+        self.HigHeartDiseaseorAttackhBP = HigHeartDiseaseorAttackhBP
+        self.PhysActivity = PhysActivity
+        self.Fruits = Fruits
+        self.Veggies = Veggies
+        self.HvyAlcoholConsump = HvyAlcoholConsump
+        self.AnyHealthcare = AnyHealthcare
+        self.NoDocbcCost = NoDocbcCost
+        self.GenHlth = GenHlth
+        self.MentHlth = MentHlth
+        self.PhysHlth = PhysHlth
+        self.DiffWalk = DiffWalk
+        self.Sex = Sex
+        self.Age = Age
+        self.Education = Education
+        self.Income = Income
+        self.Prediction = Prediction
 
     def __repr__(self):
         """Representation of database variables"""
-        return f"{this.EntryDate}, {this.HighBP}, {this.HighChol}, {this.CholCheck}, {this.BMI}, {this.smoker}, {this.Stroke},
-        {this.HigHeartDiseaseorAttackhBP}, {this.PhysActivity}, {this.Fruits}, {this.Veggies}, {this.HvyAlcoholConsump},
-        {this.AnyHealthcare}, {this.NoDocbcCost}, {this.GenHlth}, {this.MentHlth}, {this.PhysHlth}, {this.DiffWalk}, {this.Sex},
-        {this.Age}, {this.Education}, {this.Income}, {this.Prediction}"
+        return f"{self.EntryDate}, {self.HighBP}, {self.HighChol}, {self.CholCheck}, {self.BMI}, {self.smoker}, {self.Stroke},
+        {self.HigHeartDiseaseorAttackhBP}, {self.PhysActivity}, {self.Fruits}, {self.Veggies}, {self.HvyAlcoholConsump},
+        {self.AnyHealthcare}, {self.NoDocbcCost}, {self.GenHlth}, {self.MentHlth}, {self.PhysHlth}, {self.DiffWalk}, {self.Sex},
+        {self.Age}, {self.Education}, {self.Income}, {self.Prediction}"
 
 Base.metadata.create_all(engine)
 engine.dispose()
