@@ -62,6 +62,10 @@ else:
             plt.ylabel('Number registered')
             st.pyplot(fig)
 
+            #fig2 = data.hist(figsize=(8,5))
+            p = data.hist(figsize = (20,20))
+            st.pyplot(p)
+
             lt, rt, md= st.columns(3)
             lt.markdown('<h4 span style="color: green;">Show prediction dataset</span>', unsafe_allow_html=True)
             check = rt.checkbox("")

@@ -84,7 +84,7 @@ def printResult(pred):
         st.markdown('<h4 span style="color: orange;">Our model predicts you might be exposed to diabetes risks.\
             Below are potential causes.</span>', unsafe_allow_html=True)
         risks = st.table(cases)
-        st.markdown('<h4 span style="color: orange;">You are therefore required to visit nearest facility for further\
+        st.markdown('<h4 s4pan style="color: orange;">You are therefore required to visit nearest facility for further\
             screening...🏃‍♀️🏃‍♂️</span>', unsafe_allow_html=True)
     elif pred == 0:
         rain(
@@ -228,7 +228,7 @@ def userInput():
                 'Veggies':vgs_rs, 'HvyAlcoholConsump':alc_rs, 'AnyHealthcare':hc_rs, 'NoDocbcCost':ndc_rs,
                 'GenHlth':gh, 'MentHlth':mh, 'PhysHlth':ph, 'DiffWalk':wc_rs, 'Sex':sx_rs, 'Age':age_rs,
                 'Education':edu_rs, 'Income':inc_rs}
-    return elements, inputs, 
+    return elements, inputs, cases
 
 if __name__ == "__main__":
     user_inputs = userInput()
